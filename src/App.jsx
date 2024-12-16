@@ -1,16 +1,18 @@
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Home} from "./components/pages/Home.jsx";
+import {Success} from "./components/pages/Success.jsx";
+import {Navbar} from "./components/Navbar.jsx";
+
 function App() {
     return (
         <>
-            <div>
-                <h1>Hello, React!</h1>
-                <p>This is a simple React application.</p>
-                <button>Click me!</button>
-                <button>Add Me</button>
-                <button>I am ok now</button>
-
-                
-                <button>Show dif</button>
-            </div>
+            <BrowserRouter>
+                <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/success" element={<Success/>}/>
+                </Routes>
+            </BrowserRouter>
         </>
     );
 
