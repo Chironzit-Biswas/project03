@@ -39,7 +39,7 @@ export const FoodCard = () => {
 
             </div>
             <div
-                className={`fixed right-0 top-0 h-full w-[400px] bg-green-700 ${cartOpen ? "" : "right-[-500px] transition-all duration-700"}`}>
+                className={`fixed right-0 top-0 h-full w-[400px] bg-green-700 ${cartOpen ? "right-0 transition-all duration-700" : "right-[-500px] transition-all duration-700"}`}>
                 <div className={'flex justify-between items-center px-2'}>
                     <h3 className={'text-white text-center  p-4 text-2xl font-bold'}>Shopping Cart</h3>
                     <button onClick={() => setCartOpen(!cartOpen)}
@@ -75,7 +75,7 @@ export const FoodCard = () => {
                     </button>
                 </div>
                 {/* ! Here is our store Icon*/}
-                
+
             </div>
             <div
                 className={'fixed right-7 bottom-4 h-[60px] w-[60px] bg-green-700 flex items-center justify-center rounded-full p-5 '}>
