@@ -1,43 +1,40 @@
 import FoodData from "./FoodData.js";
-
+import {MdStar} from "react-icons/md";
 
 export const FoodCard = () => {
 
 
     return (
-        <div className={'w-full md:mx-auto h-auto flex justify-center flex-wrap gap-10 bg-white'}>
-
-            {
-                FoodData.map((foodData) => {
+        <>
+            <div className={'w-full flex flex-wrap mx-auto gap-5 '}>
+                {FoodData.map((food) => {
                     return (
-                        <div key={foodData.id}
-                             className={'w-[350px]  bg-white-300 p-4 rounded-lg shadow shadow-gray-700'}>
-                            <div>
-                                <img className={'w-[150px] h-[150px] mx-auto'} src={foodData.img}
-                                     alt={foodData.name}/>
+                        <div key={food.id}
+                             className={'w-[280px] bg-white  mb-5 rounded-lg shadow-gray-500 shadow-sm hover:scale-110 transition-all duration-300 ease-in-out'}>
+                            <img className={'w-[250px] h-[200px] mx-auto my-3'} src={food.img} alt=""/>
+                            <div className={'flex justify-between font-bold items-center py-3 px-2'}>
+                                <h3>{food.name}</h3>
+                                <p>{food.price} TK</p>
                             </div>
-                            <div className={'flex justify-between items-center mb-4'}>
-                                <h2 className={'font-semibold mt-3'}>{foodData.name}</h2>
-                                <h3 className={'text-sm font-bold'}>{foodData.price} TK</h3>
+                            <div>
+                                <h3 className={'font-light text-[15px] text-justify px-2'}> {food.desc.slice(0, 105)} ...</h3>
                             </div>
 
-                            <div className={''}>
-                                <span className={'text-[13px]'}>{foodData.desc.slice(0, 80)}</span>
-                            </div>
-                            <div className={'flex justify-between  py-5 mt-3 items-center '}>
-                                <p>{foodData.rating}</p>
+                            <div className={'flex justify-between mt-10 items-center font-bold mb-5 px-2'}>
+                                <div className={'flex items-center gap-1'}>
+                                    <MdStar className={'text-yellow-600'}/>
+                                    <h3>{food.rating}</h3>
+                                </div>
                                 <button
-                                    className={' bg-green-500 px-3 rounded-md text-white font-bold '}>Add
+                                    className={'bg-green-500 text-white px-2 font-bold rounded-lg hover:bg-green-700'}>Add
                                     to
                                     Cart
                                 </button>
                             </div>
-
                         </div>
-
                     )
-                })
-            }
-        </div>
+                })}
+            </div>
+        </>
     )
 }
