@@ -78,7 +78,7 @@ export const FoodCard = () => {
 
             </div>
             <div
-                className={'fixed right-7 bottom-4 h-[60px] w-[60px] bg-green-700 flex items-center justify-center rounded-full p-5 '}>
+                className={'fixed text-white right-7 bottom-4 h-[60px] w-[60px] bg-green-700 flex items-center justify-center rounded-full p-5 '}>
                 <button
                     onClick={() => setCartOpen(!cartOpen)}
                     className={'text-4xl'}>
